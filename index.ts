@@ -15,14 +15,49 @@
 // developer.saySomething('algo');
 // developer.bestLanguage('Javascript');
 
-//--------- PUNTO 1 ----------//
+//--------- PUNTO 1 Y 2 ----------//
 
 // Creo la clase persona
+class Person {
+  /* Atributos */
+  name: string;
+  age: number;
+  public saySomething: any;
+  /* Constructor */
+  constructor(nombre: string, edad: number, say: any) {
+    this.name = nombre;
+    this.age = edad;
+    this.saySomething = say;
+  }
+  /* Métodos */
+  myNameIs() {
+    console.log(this.name);
+  }
+}
 
-//--------- PUNTO 2 ----------//
+//--------- PUNTO 3 Y 4 ----------//
 
-//--------- PUNTO 3 ----------//
-
-//--------- PUNTO 4 ----------//
+class Developer extends Person {
+  /* Atributos */
+  public bestLanguage: string;
+  /* Constructor */
+  constructor(nombre: string, edad: number, say: any, lenguaje: any) {
+    super(nombre, edad, say);
+    this.bestLanguage = lenguaje;
+  }
+  /* Método */
+  set() {}
+}
 
 //--------- PUNTO 5 ----------//
+
+const developer = new Developer(
+  'pedro',
+  35,
+  (something) => console.log(something),
+  (language) => console.log(language + ' is the best language')
+);
+
+developer.myNameIs();
+developer.saySomething('algo');
+developer.bestLanguage('Javascript');
